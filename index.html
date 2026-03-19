@@ -78,11 +78,19 @@
             color: #ffffff;
         }
 
+        /* Precios */
         .price-container {
             margin: 20px 0;
             display: flex;
             align-items: baseline;
-            gap: 8px;
+            gap: 12px;
+        }
+
+        .old-price {
+            font-size: 1.4rem;
+            text-decoration: line-through;
+            color: #64748b;
+            font-weight: 500;
         }
 
         .current-price {
@@ -117,33 +125,6 @@
             transform: translateY(-2px);
         }
 
-        /* Reviews Section */
-        .reviews-section {
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid #334155;
-        }
-
-        .review-card {
-            background: #0f172a;
-            padding: 15px;
-            border-radius: 10px;
-            margin-bottom: 15px;
-            font-size: 0.85rem;
-        }
-
-        .stars {
-            color: #fbbf24;
-            margin-bottom: 5px;
-        }
-
-        .reviewer-name {
-            font-weight: 700;
-            color: #ffffff;
-            display: block;
-            margin-top: 5px;
-        }
-
         .trust-badges {
             display: flex;
             justify-content: space-between;
@@ -165,6 +146,36 @@
             margin-bottom: 5px;
         }
 
+        /* Reviews Section (Scrolled) */
+        .reviews-section {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #334155;
+            max-height: 500px;
+            overflow-y: auto; /* Permite scroll si son muchas */
+        }
+
+        .review-card {
+            background: #0f172a;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            font-size: 0.85rem;
+            border: 1px solid #1e293b;
+        }
+
+        .stars {
+            color: #fbbf24;
+            margin-bottom: 5px;
+        }
+
+        .reviewer-name {
+            font-weight: 700;
+            color: #22d3ee;
+            display: block;
+            margin-top: 5px;
+        }
+
         .trust-section {
             margin-top: 20px;
             text-align: center;
@@ -174,6 +185,10 @@
             height: 25px;
             margin-top: 10px;
         }
+
+        /* Custom Scrollbar for Reviews */
+        .reviews-section::-webkit-scrollbar { width: 5px; }
+        .reviews-section::-webkit-scrollbar-thumb { background: #334155; border-radius: 10px; }
 
         /* Modal */
         .modal-overlay {
@@ -230,6 +245,7 @@
         </ul>
 
         <div class="price-container">
+            <span class="old-price">$90.05</span>
             <span class="current-price">$55.07</span>
             <span class="currency">USD</span>
         </div>
@@ -252,18 +268,66 @@
         </div>
 
         <div class="reviews-section">
-            <h3 style="font-size: 1rem; margin-bottom: 15px; color: #22d3ee;">What our customers say</h3>
+            <h3 style="font-size: 1rem; margin-bottom: 15px; color: #22d3ee; text-align: center;">Customer Success Stories</h3>
             
             <div class="review-card">
                 <div class="stars">★★★★★</div>
-                <p style="margin:0;">"Finally a controller with no drift. The Hall Effect sticks are a game changer for Warzone."</p>
+                <p style="margin:0;">"No more drift! Best investment for competitive play."</p>
                 <span class="reviewer-name">James W. - Texas</span>
             </div>
 
             <div class="review-card">
                 <div class="stars">★★★★★</div>
-                <p style="margin:0;">"Lightning fast shipping and the build quality is premium. Better than the stock ones."</p>
+                <p style="margin:0;">"Shipping was incredibly fast. The feel of the sticks is 10/10."</p>
                 <span class="reviewer-name">Sarah M. - California</span>
+            </div>
+
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p style="margin:0;">"Unbeatable price for Hall Effect tech. Highly recommended."</p>
+                <span class="reviewer-name">Michael R. - Florida</span>
+            </div>
+
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p style="margin:0;">"The latency is non-existent. Perfect for Smash Bros."</p>
+                <span class="reviewer-name">David L. - New York</span>
+            </div>
+
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p style="margin:0;">"Great customer service. Responded to my questions in minutes."</p>
+                <span class="reviewer-name">Emily K. - Washington</span>
+            </div>
+
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p style="margin:0;">"Feels very premium in hand. Love the grip texture."</p>
+                <span class="reviewer-name">Robert P. - Ohio</span>
+            </div>
+
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p style="margin:0;">"Works perfectly on my PC and Switch. Very easy setup."</p>
+                <span class="reviewer-name">Chris B. - Georgia</span>
+            </div>
+
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p style="margin:0;">"My KD went up since I got this. No jokes. Precise AF."</p>
+                <span class="reviewer-name">Nick S. - Nevada</span>
+            </div>
+
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p style="margin:0;">"The packaging was secure. Lab grade performance indeed."</p>
+                <span class="reviewer-name">Jessica H. - Illinois</span>
+            </div>
+
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p style="margin:0;">"Best controller I've owned in years. Worth every penny."</p>
+                <span class="reviewer-name">Thomas G. - Arizona</span>
             </div>
         </div>
 
@@ -277,12 +341,12 @@
         <div class="modal-content">
             <h2 style="margin:0;">Order Summary</h2>
             <div id="total-info" style="font-size: 2.2rem; color: #22d3ee; margin: 20px 0; font-weight: 900;"></div>
-            <p style="font-size: 0.85rem; color: #94a3b8;">Redirecting to secure payment server...</p>
+            <p style="font-size: 0.85rem; color: #94a3b8;">SECURE PAYPAL CHECKOUT</p>
 
             <a href="https://paypal.me/CRIPT9" id="linkPaypal" target="_blank" class="pay-link">
                 Pay with PayPal
             </a>
-            <button onclick="closeModal()" style="background:none; border:none; color:#94a3b8; margin-top:20px; cursor:pointer;">Cancel Order</button>
+            <button onclick="closeModal()" style="background:none; border:none; color:#94a3b8; margin-top:20px; cursor:pointer;">Cancel</button>
         </div>
     </div>
 
