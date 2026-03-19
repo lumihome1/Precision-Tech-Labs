@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Precision Tech Labs - Buy Now</title>
+    <title>Precision Tech Labs | Official Store</title>
     
     <meta property="og:title" content="Precision Tech Labs - Machenike G3 V2">
-    <meta property="og:description" content="Lab Grade Performance - Secure Checkout">
+    <meta property="og:description" content="Lab Grade Performance. Order Now with Free Shipping in the US.">
     <meta property="og:image" content="https://lumihome1.github.io/Precision-Tech-Labs/logo.png">
-    <meta property="og:url" content="https://lumihome1.github.io/Precision-Tech-Labs/">
+    <meta property="og:url" content="https://precisionlabs.lat/">
     <meta property="og:type" content="website">
 
     <style>
@@ -35,7 +35,7 @@
         .product-container {
             max-width: 420px;
             margin: 20px auto;
-            padding: 20px;
+            padding: 25px;
             background: #1e293b;
             border-radius: 15px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.6);
@@ -46,6 +46,21 @@
             width: 100%;
             border-radius: 12px;
             margin-bottom: 20px;
+        }
+
+        .specs-list {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0;
+            font-size: 0.95rem;
+            color: #cbd5e1;
+        }
+
+        .specs-list li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
 
         .tagline {
@@ -66,14 +81,20 @@
         .price-container {
             margin: 20px 0;
             display: flex;
-            align-items: center;
-            gap: 15px;
+            align-items: baseline;
+            gap: 8px;
         }
 
         .current-price {
             font-size: 3rem;
             font-weight: 900;
             color: #22d3ee;
+        }
+
+        .currency {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            font-weight: 600;
         }
 
         .btn-buy {
@@ -88,24 +109,70 @@
             width: 100%;
             transition: all 0.3s ease;
             text-transform: uppercase;
+            box-shadow: 0 4px 14px 0 rgba(34, 211, 238, 0.39);
         }
 
         .btn-buy:hover {
             background: #06b6d4;
-            transform: scale(1.02);
+            transform: translateY(-2px);
+        }
+
+        /* Reviews Section */
+        .reviews-section {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #334155;
+        }
+
+        .review-card {
+            background: #0f172a;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            font-size: 0.85rem;
+        }
+
+        .stars {
+            color: #fbbf24;
+            margin-bottom: 5px;
+        }
+
+        .reviewer-name {
+            font-weight: 700;
+            color: #ffffff;
+            display: block;
+            margin-top: 5px;
+        }
+
+        .trust-badges {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+            font-size: 0.75rem;
+            color: #94a3b8;
+        }
+
+        .badge-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            flex: 1;
+        }
+
+        .badge-icon {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
         }
 
         .trust-section {
-            margin-top: 25px;
+            margin-top: 20px;
             text-align: center;
-            border-top: 1px solid #334155;
-            padding-top: 20px;
         }
 
         .paypal-logo {
-            height: 30px;
+            height: 25px;
             margin-top: 10px;
-            filter: drop-shadow(0 0 5px rgba(34, 211, 238, 0.3));
         }
 
         /* Modal */
@@ -147,36 +214,75 @@
 <body>
 
     <header>
-        <img src="logo.png" alt="Precision Tech Labs" class="header-logo">
+        <img src="logo.png" alt="Precision Tech Labs Logo" class="header-logo">
     </header>
 
     <div class="product-container">
-        <img src="control.png" alt="Machenike G3 V2" class="product-image">
+        <img src="control.png" alt="Machenike G3 V2 Controller" class="product-image">
 
-        <div class="tagline">Lab Grade Performance</div>
+        <div class="tagline">Premium Performance</div>
         <h1 class="product-title">Machenike G3 V2 Hall Effect</h1>
+
+        <ul class="specs-list">
+            <li><span>🕹️</span> Hall Effect Joysticks (Anti-Drift)</li>
+            <li><span>⚡</span> Ultra-low Latency Tech</li>
+            <li><span>📱</span> Multi-platform Compatibility</li>
+        </ul>
 
         <div class="price-container">
             <span class="current-price">$55.07</span>
+            <span class="currency">USD</span>
         </div>
 
         <button class="btn-buy" onclick="openModal()">Secure Checkout</button>
 
+        <div class="trust-badges">
+            <div class="badge-item">
+                <span class="badge-icon">🛡️</span>
+                <span>1-Year Warranty</span>
+            </div>
+            <div class="badge-item">
+                <span class="badge-icon">🚚</span>
+                <span>Free US Shipping</span>
+            </div>
+            <div class="badge-item">
+                <span class="badge-icon">🔒</span>
+                <span>Secure Payment</span>
+            </div>
+        </div>
+
+        <div class="reviews-section">
+            <h3 style="font-size: 1rem; margin-bottom: 15px; color: #22d3ee;">What our customers say</h3>
+            
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p style="margin:0;">"Finally a controller with no drift. The Hall Effect sticks are a game changer for Warzone."</p>
+                <span class="reviewer-name">James W. - Texas</span>
+            </div>
+
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p style="margin:0;">"Lightning fast shipping and the build quality is premium. Better than the stock ones."</p>
+                <span class="reviewer-name">Sarah M. - California</span>
+            </div>
+        </div>
+
         <div class="trust-section">
-            <div style="font-size: 0.8rem; color: #94a3b8;">Official Payment Partner</div>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" class="paypal-logo">
+            <div style="font-size: 0.75rem; color: #64748b;">Official Payment Partner</div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal Verified" class="paypal-logo">
         </div>
     </div>
 
     <div class="modal-overlay" id="paymentModal">
         <div class="modal-content">
             <h2 style="margin:0;">Order Summary</h2>
-            <div id="total-info" style="font-size: 2rem; color: #22d3ee; margin: 20px 0; font-weight: 900;"></div>
+            <div id="total-info" style="font-size: 2.2rem; color: #22d3ee; margin: 20px 0; font-weight: 900;"></div>
+            <p style="font-size: 0.85rem; color: #94a3b8;">Redirecting to secure payment server...</p>
 
             <a href="https://paypal.me/CRIPT9" id="linkPaypal" target="_blank" class="pay-link">
                 Pay with PayPal
             </a>
-            <button onclick="closeModal()" style="background:none; border:none; color:#94a3b8; margin-top:15px; cursor:pointer;">Cancel</button>
+            <button onclick="closeModal()" style="background:none; border:none; color:#94a3b8; margin-top:20px; cursor:pointer;">Cancel Order</button>
         </div>
     </div>
 
