@@ -1,1 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Precision Tech Labs - Buy Now</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            margin: 0;
+            background-color: #0f172a;
+            color: #f8fafc;
+        }
 
+        header {
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 2px solid #22d3ee;
+            background-color: #1e293b;
+        }
+
+        .header-logo {
+            height: 50px;
+            max-width: 90%;
+            object-fit: contain;
+        }
+
+        .product-container {
+            max-width: 420px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #1e293b;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+            border: 1px solid #334155;
+        }
+
+        .product-image {
+            width: 100%;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        .tagline {
+            color: #22d3ee;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .product-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin: 10px 0;
+            color: #ffffff;
+        }
+
+        .price-container {
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .current-price {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #22d3ee;
+        }
+
+        .btn-buy {
+            background: #22d3ee;
+            color: #0f172a;
+            border: none;
+            padding: 20px;
+            border-radius: 10px;
+            font-weight: 800;
+            font-size: 1.4rem;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .btn-buy:hover {
+            background: #06b6d4;
+            transform: scale(1.02);
+        }
+
+        .trust-section {
+            margin-top: 25px;
+            text-align: center;
+            border-top: 1px solid #334155;
+            padding-top: 20px;
+        }
+
+        .paypal-logo {
+            height: 30px;
+            margin-top: 10px;
+            filter: drop-shadow(0 0 5px rgba(34, 211, 238, 0.3));
+        }
+
+        /* Modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.9);
+            backdrop-filter: blur(10px);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: #1e293b;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            border: 2px solid #22d3ee;
+            width: 85%;
+            max-width: 320px;
+        }
+
+        .pay-link {
+            text-decoration: none;
+            padding: 18px;
+            border-radius: 10px;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #0070ba;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="logo.png" alt="Precision Tech Labs" class="header-logo">
+    </header>
+
+    <div class="product-container">
+        <img src="control.png" alt="Machenike G3 V2" class="product-image">
+
+        <div class="tagline">Lab Grade Performance</div>
+        <h1 class="product-title">Machenike G3 V2 Hall Effect</h1>
+
+        <div class="price-container">
+            <span class="current-price">$55.07</span>
+        </div>
+
+        <button class="btn-buy" onclick="openModal()">Secure Checkout</button>
+
+        <div class="trust-section">
+            <div style="font-size: 0.8rem; color: #94a3b8;">Official Payment Partner</div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" class="paypal-logo">
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="paymentModal">
+        <div class="modal-content">
+            <h2 style="margin:0;">Order Summary</h2>
+            <div id="total-info" style="font-size: 2rem; color: #22d3ee; margin: 20px 0; font-weight: 900;"></div>
+
+            <a href="https://paypal.me/CRIPT9" id="linkPaypal" target="_blank" class="pay-link">
+                Pay with PayPal
+            </a>
+            <button onclick="closeModal()" style="background:none; border:none; color:#94a3b8; margin-top:15px; cursor:pointer;">Cancel</button>
+        </div>
+    </div>
+
+    <script>
+        const price = 55.07;
+        function openModal() {
+            document.getElementById('total-info').innerText = "$" + price + " USD";
+            document.getElementById('linkPaypal').href = `https://paypal.me/CRIPT9/${price}`;
+            document.getElementById('paymentModal').style.display = 'flex';
+        }
+        function closeModal() { document.getElementById('paymentModal').style.display = 'none'; }
+    </script>
+</body>
+</html>
